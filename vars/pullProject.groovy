@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 def call(Map projectDetails) {
-        projectDetails.each{ k, v -> println "${k}:${v}" }
         echo " ${env.WORKSPACE}"
         def image_id = projectDetails.image_id
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
