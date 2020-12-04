@@ -2,8 +2,8 @@
 
 def call(Map projectDetails) {
         projectDetails.each{ k, v -> println "${k}:${v}" }
-        echo " ${projectDetails.image_id}"
-        def image_id = ${projectDetails.image_id}
+        echo " ${env.WORKSPACE}"
+        def image_id = projectDetails.image_id
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
         sh "mkdir -p ${env.WORKSPACE}${projectDetails.dest} && cp -r ${projectDetails.src} ${projectDetails.dest}"
         sh "docker build -t ${image_id} -f Dockerfile_nginx ."
