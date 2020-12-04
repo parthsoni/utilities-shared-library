@@ -1,4 +1,4 @@
-def call(ArrayList<string> list, Closure body) {
+def call(ArrayList list, Closure body) {
     node {
         
         stage('Clean workspace and prepare') { // for display purposes
