@@ -1,6 +1,7 @@
 package org.docker
 
 def hubLogin(String username, String password) {
+  echo "Login docker with user :- ${username}"
   sh "docker login -u ${username} -p ${password}"
 }
 
