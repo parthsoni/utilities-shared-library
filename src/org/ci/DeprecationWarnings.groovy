@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 
-package com.invoca.ci
+package org.ci
 
 import com.invoca.github.GitHubStatus
 
