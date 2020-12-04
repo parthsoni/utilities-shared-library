@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.invoca.util
+package org.util
 
 class CacheUtil {
   static String sanitizeCacheKey(String cacheKey) {
