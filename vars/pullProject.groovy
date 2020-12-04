@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call(Map projectDetails) {
-        map.each{ k, v -> println "${k}:${v}" }
+        projectDetails.each{ k, v -> println "${k}:${v}" }
         buildImage(${projectDetails})
         withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
         sh "docker login -u parthsoni -p ${DOCKER_HUB_CREDENTIALS}"
