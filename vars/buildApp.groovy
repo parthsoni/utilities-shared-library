@@ -1,4 +1,4 @@
-def call(Map list, Closure body) {
+def call(Map list) {
     node {
         
         stage('Clean workspace and prepare') { // for display purposes
