@@ -12,7 +12,7 @@ def call(Map projectDetails) {
         hubLogin("parthsoni", ${DOCKER_HUB_CREDENTIALS});
         //sh "docker login -u parthsoni -p ${DOCKER_HUB_CREDENTIALS}"
         sh "docker tag ${image_id} ${projectDetails.dockerRepo}/${image_id}"
-        sh "docker push parthsoni/${image_id}"
+        sh "docker push ${projectDetails.dockerRepo}/${image_id}"
         }
 }
 
