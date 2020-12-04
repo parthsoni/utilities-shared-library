@@ -9,6 +9,7 @@ def call(Map projectDetails) {
         sh "mkdir -p ${env.WORKSPACE}${projectDetails.dest} && cp -r ${projectDetails.src} ${projectDetails.dest}"
         sh "docker build -t ${image_id} -f Dockerfile_${projectDetails.serviceName} ."
         withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
+                echo "${projectDetails.dockerRepo}"
         hubLogin(${projectDetails.dockerRepo}, ${DOCKER_HUB_CREDENTIALS});
         //sh "docker login -u parthsoni -p ${DOCKER_HUB_CREDENTIALS}"
         sh "docker tag ${image_id} ${projectDetails.dockerRepo}/${image_id}"
