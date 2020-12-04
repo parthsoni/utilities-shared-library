@@ -14,7 +14,7 @@ def call(Map list) {
         stage('Build artifacts and docker image') {
         def USER_HOME = "/home/ubuntu/"
         def NGINX_BUILD_PATH = "${env.WORKSPACE}"
-        def image_id = ${list}.image_id
+        def image_id = list.image_id
         //sh "cp -r ${USER_HOME}docker_config ${env.WORKSPACE}"
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
         sh "mkdir -p ${env.WORKSPACE}/eskinfront/patient/ && cp -r list.src list.dest"
