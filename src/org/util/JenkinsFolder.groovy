@@ -1,4 +1,4 @@
-package com.invoca.util
+package org.util
 
 import com.cloudbees.hudson.plugins.folder.Folder
 import hudson.model.AbstractProject
