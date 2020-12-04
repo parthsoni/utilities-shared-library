@@ -2,6 +2,7 @@
 
 def call(Map projectDetails) {
         projectDetails.each{ k, v -> println "${k}:${v}" }
+        echo " ${projectDetails.image_id}"
         def image_id = ${projectDetails.image_id}
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
         sh "mkdir -p ${env.WORKSPACE}${list.dest} && cp -r ${list.src} ${list.dest}"
