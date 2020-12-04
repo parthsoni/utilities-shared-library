@@ -1,8 +1,6 @@
 package org.docker
 
-class Docker {
-
-public hubLogin(String username, String password) {
+def hubLogin(String username, String password) {
    sh "docker login -u ${username} -p ${password}"
 }
 
