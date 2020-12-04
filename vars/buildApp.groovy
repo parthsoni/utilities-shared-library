@@ -1,4 +1,9 @@
 def call(Map list) {
+    
+    println "list".dump()
+    
+    println list.dump()
+
     node {
         
         stage('Clean workspace and prepare') { // for display purposes
