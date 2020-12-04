@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.invoca.docker
+package org.docker
 
 class Image implements Serializable {
   public static String LABEL_SCHEMA_VERSION = "org.label-schema.schema-version"
