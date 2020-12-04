@@ -2,7 +2,7 @@
 
 def call(Map projectDetails) {
 
-        def NGINX_BUILD_PATH = "${env.WORKSPACE}"
+        def NGINX_BUILD_PATH = "${WORKSPACE}"
         def image_id = ${projectDetails.image_id}
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
         sh "mkdir -p ${env.WORKSPACE}${list.dest} && cp -r ${list.src} ${list.dest}"
