@@ -4,7 +4,7 @@ class Docker {
 
 public hubLogin(String username, String password) {
   echo "Login docker with user :- ${username}"
-  return sh "docker login -u ${username} -p ${password}"
+  return sh (script: "docker login -u ${username} -p ${password}") == 0
 }
 
 def imageExistsLocally(String imageWithTag) {
