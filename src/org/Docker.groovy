@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/groovy
-package io.invoca;
-=======
 package org.docker;
->>>>>>> c1eabcf7007fee143647d691de26bd0767464fcd
 
 /* args
     build_args  list (optional)
