@@ -11,7 +11,7 @@ def call(Map projectDetails) {
         withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
         hubLogin("parthsoni", ${DOCKER_HUB_CREDENTIALS});
         //sh "docker login -u parthsoni -p ${DOCKER_HUB_CREDENTIALS}"
-        sh "docker tag ${image_id} parthsoni/${image_id}"
+        sh "docker tag ${image_id} ${projectDetails.dockerRepo}/${image_id}"
         sh "docker push parthsoni/${image_id}"
         }
 }
