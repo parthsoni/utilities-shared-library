@@ -3,7 +3,7 @@ package org.docker
 class Docker {
 
 public hubLogin(String username, String password) {
-  return sh(script: "docker login -u ${username} -p ${password}", returnStatus: true) == 0
+   sh "docker login -u ${username} -p ${password}"
 }
 
 def imageExistsLocally(String imageWithTag) {
