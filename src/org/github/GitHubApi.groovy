@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.invoca.github
+package org.github
 
 import java.net.HttpURLConnection
 import java.net.*
