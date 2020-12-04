@@ -18,4 +18,4 @@ def getImage(String imageWithTag) {
   return imageExistsLocally(imageWithTag) || downloadImage(imageWithTag)
 }
   
-}
+
