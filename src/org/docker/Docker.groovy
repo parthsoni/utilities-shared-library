@@ -1,8 +1,10 @@
 package org.docker
 
-def hubLogin(String username, String password) {
+class Docker {
+
+public hubLogin(String username, String password) {
   echo "Login docker with user :- ${username}"
-  sh "docker login -u ${username} -p ${password}"
+  return sh "docker login -u ${username} -p ${password}"
 }
 
 def imageExistsLocally(String imageWithTag) {
@@ -17,4 +19,6 @@ def getImage(String imageWithTag) {
   // Check if image is present locally, or try downloading it from remote.
   // Return true if image is now present locally, false otherwise.
   return imageExistsLocally(imageWithTag) || downloadImage(imageWithTag)
+}
+  
 }
