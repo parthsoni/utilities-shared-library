@@ -3,13 +3,13 @@
 def call(Map list) {
     
     
-    println ${list}.dump()
+    println list.dump()
 
     node {
         
         stage('Clean workspace and prepare') { // for display purposes
         // Get some code from a GitHub repository
-        git branch: ${list}.branch, credentialsId: 'eSkinDoctor_Repo', url: 'https://github.com/pNAIA/eskindoctor'
+        git branch: list.branch, credentialsId: 'eSkinDoctor_Repo', url: 'https://github.com/pNAIA/eskindoctor'
     }
         stage('Build artifacts and docker image') {
         def USER_HOME = "/home/ubuntu/"
@@ -17,7 +17,7 @@ def call(Map list) {
         def image_id = ${list}.image_id
         //sh "cp -r ${USER_HOME}docker_config ${env.WORKSPACE}"
         sh "cd ${env.WORKSPACE}/eskinfront && npm install && npm run build"
-        sh "mkdir -p ${env.WORKSPACE}/eskinfront/patient/ && cp -r ${list}.src ${list}.dest"
+        sh "mkdir -p ${env.WORKSPACE}/eskinfront/patient/ && cp -r list.src list.dest"
         
         dir("${env.WORKSPACE}") {
         sh "pwd"
