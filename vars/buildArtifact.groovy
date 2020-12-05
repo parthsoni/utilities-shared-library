@@ -8,5 +8,5 @@ def call(Map projectDetails) {
     }else {
             sh "npm install && npm run build" 
     }
-    sh "mkdir -p ${env.WORKSPACE}${projectDetails.buildDestinationPath} && cp -r ${projectDetails.buildSourcePath} ${projectDetails.buildDestinationPath}"
+    sh "mkdir -p ${env.WORKSPACE}/${projectDetails.buildDestinationPath} && cp -r ${projectDetails.buildSourcePath} ${projectDetails.buildDestinationPath}"
 }
