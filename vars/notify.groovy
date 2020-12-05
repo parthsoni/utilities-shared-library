@@ -2,11 +2,9 @@ import org.utility.Utility
 def call(Map config=[:], String buildResult){
     if (config.type == "slack") {
         echo Utility.SLACK_MESSAGE
-        echo config.message
-        slackNotitfy()
+        slackNotitfy(buildResult)
     } else {
         echo Utility.EMAIL_MESSAGE
-        echo config.message
     }
 }
 
@@ -22,6 +20,6 @@ def slackNotitfy(String buildResult) {
     slackSend channel: "#eSkinDoctor-Project", color: "warning", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was unstable"
   }
   else {
-    slackSend channel: "#eSkinDoctor-Project", color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its resulat was unclear"	
+    slackSend channel: "#eSkinDoctor-Project", color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its result was unclear"	
   }
 }
