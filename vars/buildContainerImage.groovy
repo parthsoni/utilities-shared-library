@@ -6,7 +6,7 @@ def call(Map projectDetails) {
         echo " ${env.WORKSPACE}"
         def image_id = projectDetails.image_id
         def dockerFile="Dockerfile_"+projectDetails.serviceName
-        if(!projectDetails.containsKey("dockerFile")) {
+        if(projectDetails.containsKey("dockerFile")) {
              dockerFile =  projectDetails.dockerFile                 
         }
         sh "docker build -t ${image_id} -f ${dockerFile} ."
