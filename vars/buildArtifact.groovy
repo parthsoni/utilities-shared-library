@@ -2,7 +2,7 @@
 
 def call(Map projectDetails) {
     
-    if(${projectDetails.projectSourcePath}) {
+    if(${projectDetails.projectSourcePath} && ${projectDetails.projectSourcePath}!="*" ) {
             sh "cd ${projectDetails.projectSourcePath} && npm install && npm run build" 
 
     }else {
