@@ -3,7 +3,7 @@
 def call(Map projectDetails) {
     
     if(projectDetails.projectSourcePath && projectDetails.projectSourcePath !="*" ) {
-            sh "cd ${projectDetails.projectSourcePath} && npm install -g npm-install-peers && npm run build" 
+            sh "cd ${projectDetails.projectSourcePath} && npm install -l npm-install-peers && npm run build" 
 
     }else {
             sh "npm install  && npm run build" 
